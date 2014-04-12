@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by Xeks on 06.04.14.
  */
 @Controller
-public class WebDispatchServlet{
+public class HelloController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello(ModelMap map){
