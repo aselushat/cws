@@ -1,5 +1,6 @@
 package ru.cat;
 
+import javax.persistence.Entity;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import java.io.IOException;
 /**
  * Created by Xeks on 06.04.14.
  */
+
 public class WebDispatchServlet  extends HttpServlet{
 
         public WebDispatchServlet(){
@@ -31,6 +33,6 @@ public class WebDispatchServlet  extends HttpServlet{
         }
         private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
             response.setStatus(200);
-            response.getWriter().write("Hello am Servlet11q1");
+            response.getWriter().write("Hello am Servlet11q11111111");
         }
 }
