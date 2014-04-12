@@ -1,38 +1,19 @@
 package ru.cat;
 
-import javax.persistence.Entity;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by Xeks on 06.04.14.
  */
+@Controller
+public class WebDispatchServlet{
 
-public class WebDispatchServlet  extends HttpServlet{
-
-        public WebDispatchServlet(){
-
-        }
-
-        @Override
-        public void init() throws ServletException {
-            super.init();
-        }
-
-        @Override
-        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            doPost(req, resp);
-        }
-
-        @Override
-        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            process(req, resp);
-        }
-        private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
-            response.setStatus(200);
-            response.getWriter().write("Hello am Servlet11q11111111");
-        }
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello(ModelMap map){
+        map.addAttribute("message", "Hello Spring MVC Framework!");
+        return "hello";
+    }
 }
